@@ -4,7 +4,7 @@
 To be made
 
 ## Prerequisites
-You need NodeJS on your system (I am running v19.3.0, but you can probably be fine with the latest LTS)
+You need the LTS version of NodeJS, since we are using the better-sqlite3 package, which isn't supported for node v19+
 rest to be made
 
 ## Installation
