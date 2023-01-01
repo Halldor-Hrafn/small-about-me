@@ -4,7 +4,10 @@ const path = require('path');
 require('dotenv/config');
 
 // public pages
-const frontPage = require('./routes');
+const frontPage = require('./routes/index');
+
+const loginPage = require('./routes/login');
+const registerPage = require('./routes/register');
 
 // initialize express
 const app = express();
@@ -29,6 +32,9 @@ app.use(session({
 
 // public pages
 app.use('/', frontPage);
+
+app.use('/login', loginPage);
+app.use('/register', registerPage);
 
 // display what the 404 error would do
 app.use((req, res) => {
