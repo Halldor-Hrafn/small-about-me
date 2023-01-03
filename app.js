@@ -48,7 +48,7 @@ app.use((err, req, res) => {
   res.render('error', { title: 'Error', status: res.status || 500, msg: 'Whoops, someone is dumb and did something wrong' });
 });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   // eslint-disable-next-line no-console
   console.log('Server is running on port 3000');
 });
