@@ -9,6 +9,8 @@ const frontPage = require('./routes/index');
 const loginPage = require('./routes/login');
 const registerPage = require('./routes/register');
 
+const chatPage = require('./routes/chat/index');
+
 // initialize express
 const app = express();
 
@@ -35,6 +37,8 @@ app.use('/', frontPage);
 
 app.use('/login', loginPage);
 app.use('/register', registerPage);
+
+app.use('/chat', chatPage);
 
 // display what the 404 error would do
 app.use((req, res) => {
