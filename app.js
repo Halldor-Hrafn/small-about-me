@@ -11,6 +11,8 @@ const registerPage = require('./routes/register');
 
 const chatPage = require('./routes/chat/index');
 
+const adminPage = require('./routes/admin');
+
 // initialize express
 const app = express();
 
@@ -40,6 +42,8 @@ app.use('/register', registerPage);
 
 app.use('/chat', chatPage);
 
+app.use('/admin', adminPage);
+
 // display what the 404 error would do
 app.use((req, res) => {
   res.status(404);
@@ -52,7 +56,7 @@ app.use((err, req, res) => {
   res.render('error', { title: 'Error', status: res.status || 500, msg: 'Whoops, someone is dumb and did something wrong' });
 });
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   // eslint-disable-next-line no-console
   console.log('Server is running on port 3000');
 });

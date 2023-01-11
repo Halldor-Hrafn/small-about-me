@@ -7,11 +7,17 @@ router.get('/', (req, res) => {
   const msg = 'Front page';
 
   let isLoggedIn = false;
+  let admin = false;
   let username = '';
 
   if (req.session.isLoggedIn) {
     isLoggedIn = true;
     username = req.session.username;
+    if (!req.session.admin) {
+      admin = false;
+    } else {
+      admin = true;
+    }
   }
 
   const header = [
@@ -44,7 +50,7 @@ router.get('/', (req, res) => {
     `
   ]
 
-  res.render('index', { title, msg, header, paragraph, isLoggedIn, username });
+  res.render('index', { title, msg, header, paragraph, isLoggedIn, username, admin });
 });
 
 module.exports = router;
