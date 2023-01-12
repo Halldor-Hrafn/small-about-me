@@ -6,13 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "DEV=1 node app.js",
-    "setup": "bash npm-scripts/setup.sh"
+    "setup": "bash npm-scripts/setup.sh",
+    "setup-dev": "bash npm-scripts/setup-dev.sh"
   },
   "keywords": [],
   "author": "",
   "license": "GPL-3.0",
   "dependencies": {
-    "argon2": "^0.30.2",
+    "argon2": "^0.30.3",
     "better-sqlite3": "^8.0.1",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
