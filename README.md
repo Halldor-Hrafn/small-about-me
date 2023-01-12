@@ -4,7 +4,9 @@
 To be made
 
 ## Prerequisites
-You need the latest LTS version of NodeJS, since we are using the better-sqlite3 package, which isn't supported for node v19+ (as of creating this project)
+NodeJS version 18.8.0 preferably
+Sqlite3 installed on the system
+
 rest to be made
 
 ## Installation
@@ -22,10 +24,14 @@ Step 3: Set up the `.env` file and database file, you can do this with the setup
 ```sh
 npm run setup
 ```
-This command will do 3 things, 1. create the `.env` file, 2. echo into the .env file the string "`SESSION_SECRET={your session secret}`", 3. it will create the `main.db` file in the `db` directory.
 
-Step 4: replace "{your session secret}" with your actual session secret
-since we are using `express-sessions.js` with our project we must provide a secret to encrypt our session, your best bet is to randomly generate a new one and store it in your `.env` file.
+This command will do 4 things:
+- It will create the `.env` file
+- Echo into the `.env` file the string "`SESSION_SECRET={your session secret}`"
+- It will create the `main.db` database file inside the `db` directory
+- It will create tables inside the `main.db` database file
+
+Step 4: Inside the `.env` file, replace the string "`{your session secret}` with your actual session secret. The secret is required since we are using `express-session.js` with our project.
 
 Step 5: Run your app and have fun :)
 ```sh
