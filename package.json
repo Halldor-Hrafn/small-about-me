@@ -1,7 +1,7 @@
 {
   "name": "some-actual-sites",
   "version": "0.2.0",
-  "description": "",
+  "description": "A website made as a learning experience on how to create and deploy websites for production use",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
     "setup-dev": "bash npm-scripts/setup-dev.sh"
   },
   "keywords": [],
-  "author": "",
+  "author": "Halldór Hrafn Reynisson",
   "license": "GPL-3.0",
   "dependencies": {
     "argon2": "^0.30.3",
