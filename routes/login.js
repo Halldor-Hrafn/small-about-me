@@ -12,14 +12,20 @@ router.get('/', (req, res) => {
   const title = 'Login page';
 
   let isLoggedIn = false;
+  let admin = false;
   let username = '';
 
   if (req.session.isLoggedIn) {
     isLoggedIn = true;
     username = req.session.username;
+    if (!req.session.admin) {
+      admin = false;
+    } else {
+      admin = true;
+    }
   }
   
-  res.render('login', { title, isLoggedIn, username });
+  res.render('login', { title, isLoggedIn, username, admin });
 });
 
 router.post('/', async (req, res) => {

@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS comments;
 CREATE TABLE users (
   id INTEGER PRIMARY KEY,
   username TEXT UNIQUE NOT NULL,
-  display_name TEXT,
+  display_name TEXT DEFAULT '',
   email TEXT UNIQUE,
   password TEXT,
   admin INTEGER DEFAULT 0,
