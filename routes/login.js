@@ -24,7 +24,9 @@ router.get('/', (req, res) => {
       admin = true;
     }
   }
-  
+
+  if (process.env.DEV) admin = true;
+
   res.render('login', { title, isLoggedIn, username, admin });
 });
 

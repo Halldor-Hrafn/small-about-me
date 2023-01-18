@@ -20,6 +20,8 @@ router.get('/', (req, res) => {
     }
   }
 
+  if (process.env.DEV) admin = true;
+
   const header = [
     'New phone who dis?',
     'Ayo D&D?',

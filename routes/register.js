@@ -25,6 +25,8 @@ router.get('/', (req, res) => {
     }
   }
 
+  if (process.env.DEV) admin = true;
+
   res.render('register', { title, isLoggedIn, username, admin });
 });
 
