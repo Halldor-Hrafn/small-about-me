@@ -41,6 +41,8 @@ router.post('/', async (req, res) => {
   if (verified) {
     req.session.isLoggedIn = true;
     req.session.username = user.username;
+    req.session.display_name = user.display_name;
+    req.session.userId = user.id;
     if (user.admin) {
       req.session.admin = true;
     }

@@ -35,6 +35,7 @@ router.post('/', async (req, res) => {
   createUser(dbFile, req.body.username, req.body.email, hash);
   req.session.isLoggedIn = true;
   req.session.username = req.body.username;
+  req.session.display_name = req.body.username;
   res.redirect('/');
 });
 
