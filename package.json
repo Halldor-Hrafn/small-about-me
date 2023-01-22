@@ -4,7 +4,7 @@
   "description": "A website made as a learning experience on how to create and deploy websites for production use",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node src/app.js",
     "dev": "DEV=1 node app.js",
     "setup": "bash npm-scripts/setup.sh"
   },
