@@ -11,18 +11,10 @@ const router = express.Router();
 router.get('/', (req, res) => {
   const title = 'Register';
 
-  let isLoggedIn = false;
-  let admin = false;
-  let username = '';
+  let user = isLoggedIn(req.session);
 
-  if (req.session.isLoggedIn) {
-    isLoggedIn = true;
-    username = req.session.username;
-    if (!req.session.admin) {
-      admin = false;
-    } else {
-      admin = true;
-    }
+  if (!user) {
+    user.isLoggedIn = false;
   }
 
   if (process.env.DEV) admin = true;

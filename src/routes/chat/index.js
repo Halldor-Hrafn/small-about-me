@@ -2,18 +2,18 @@ const express = require('express');
 
 const router = express.Router();
 
+const isLoggedIn = require('../../middleware/isLoggedIn');
+
 router.get('/', (req, res) => {
   const title = 'Chat page';
 
-  let isLoggedIn = false;
-  let username = '';
+  let user = isLoggedIn(req.session);
 
-  if (req.session.isLoggedIn) {
-    isLoggedIn = true;
-    username = req.session.username;
+  if (!user) {
+    user.isLoggedIn = false;
   }
 
-  res.render('chat/index', { title, isLoggedIn, username });
+  res.render('chat/index', { title, user });
 });
 
 module.exports = router;

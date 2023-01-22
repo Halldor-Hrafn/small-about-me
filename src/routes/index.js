@@ -1,23 +1,32 @@
 // the front page, what else do you want?
 const express = require('express');
+
 const router = express.Router();
+
+const isLoggedIn = require('../middleware/isLoggedIn');
 
 router.get('/', (req, res) => {
   const title = 'Front page';
   const msg = 'Front page';
 
-  let isLoggedIn = false;
-  let admin = false;
-  let username = '';
+  // let isLoggedIn = false;
+  // let admin = false;
+  // let username = '';
 
-  if (req.session.isLoggedIn) {
-    isLoggedIn = true;
-    username = req.session.username;
-    if (!req.session.admin) {
-      admin = false;
-    } else {
-      admin = true;
-    }
+  // if (req.session.isLoggedIn) {
+  //   isLoggedIn = true;
+  //   username = req.session.username;
+  //   if (!req.session.admin) {
+  //     admin = false;
+  //   } else {
+  //     admin = true;
+  //   }
+  // }
+
+  let user = isLoggedIn(req.session);
+
+  if (!user) {
+    user.isLoggedIn = false;
   }
 
   if (process.env.DEV) admin = true;
@@ -52,7 +61,7 @@ router.get('/', (req, res) => {
     `
   ]
 
-  res.render('index', { title, msg, header, paragraph, isLoggedIn, username, admin });
+  res.render('index', { title, msg, header, paragraph, user });
 });
 
 module.exports = router;

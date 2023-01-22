@@ -6,28 +6,22 @@ const dbFile = path.join(__dirname, '../db/main.db');
 
 const findUser = require('../db/read/user');
 
+const isLoggedIn = require('../middleware/isLoggedIn');
+
 const router = express.Router();
 
 router.get('/', (req, res) => {
   const title = 'Login page';
 
-  let isLoggedIn = false;
-  let admin = false;
-  let username = '';
+  let user = isLoggedIn(req.session);
 
-  if (req.session.isLoggedIn) {
-    isLoggedIn = true;
-    username = req.session.username;
-    if (!req.session.admin) {
-      admin = false;
-    } else {
-      admin = true;
-    }
+  if (!user) {
+    user.isLoggedIn = false;
   }
 
   if (process.env.DEV) admin = true;
 
-  res.render('login', { title, isLoggedIn, username, admin });
+  res.render('login', { title, user });
 });
 
 router.post('/', async (req, res) => {
