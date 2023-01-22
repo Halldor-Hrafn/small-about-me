@@ -28,13 +28,16 @@ Step 3: Set up the `.env` file and database file, you can do this with the setup
 npm run setup
 ```
 
-This command will do 4 things:
+This command will do 5 things:
 - It will create the `.env` file
 - Echo into the `.env` file the string "`SESSION_SECRET={your session secret}`"
 - It will create the `main.db` database file inside the `db` directory
 - It will create tables inside the `main.db` database file
+- It will create a throwaway admin account with the email `throwaway.admin.account@gmail.com` and the password `admin`
 
-Step 4: Inside the `.env` file, replace the string "`{your session secret}` with your actual session secret. The secret is required since we are using `express-session.js` with our project.
+**NOTE: THE THROWAWAY ADMIN ACCOUNT IS DESIGNED TO BE USED ONLY TO MAKE THE OWNER CREATE THEIR OWN ADMIN ACCOUNT, AND NOT TO BE THE MAIN ADMIN ACCOUNT, PLEASE DELETE IT ONCE YOU CREATE YOUR OWN ADMIN ACCOUNT.**
+
+Step 4: Inside the `.env` file, replace the string "`{your session secret}`" with your actual session secret. The secret is required since we are using `express-session.js` with our project.
 
 Step 5: Run your app and have fun :)
 ```sh
