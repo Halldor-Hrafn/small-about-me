@@ -12,14 +12,22 @@ router.get('/', (req, res) => {
   const title = 'Login page';
 
   let isLoggedIn = false;
+  let admin = false;
   let username = '';
 
   if (req.session.isLoggedIn) {
     isLoggedIn = true;
     username = req.session.username;
+    if (!req.session.admin) {
+      admin = false;
+    } else {
+      admin = true;
+    }
   }
-  
-  res.render('login', { title, isLoggedIn, username });
+
+  if (process.env.DEV) admin = true;
+
+  res.render('login', { title, isLoggedIn, username, admin });
 });
 
 router.post('/', async (req, res) => {
@@ -33,6 +41,8 @@ router.post('/', async (req, res) => {
   if (verified) {
     req.session.isLoggedIn = true;
     req.session.username = user.username;
+    req.session.display_name = user.display_name;
+    req.session.userId = user.id;
     if (user.admin) {
       req.session.admin = true;
     }
