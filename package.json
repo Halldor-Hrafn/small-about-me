@@ -1,13 +1,12 @@
 {
   "name": "some-actual-sites",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "DEV=1 node app.js",
-    "setup": "bash npm-scripts/setup.sh",
-    "setup-dev": "bash npm-scripts/setup-dev.sh"
+    "setup": "bash npm-scripts/setup.sh"
   },
   "keywords": [],
   "author": "",
