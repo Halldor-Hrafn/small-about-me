@@ -3,5 +3,5 @@ node_modules
 package-lock.json
 .vscode
 
-db/main.db
-db/debug.sql
+src/db/main.db
+src/db/debug.sql

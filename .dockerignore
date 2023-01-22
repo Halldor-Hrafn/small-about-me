@@ -1,4 +1,4 @@
 node_modules
 .vscode
 
-db/debug.sql
+src/db/debug.sql

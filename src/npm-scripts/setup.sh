@@ -1,4 +1,4 @@
 touch .env
-touch src/db/main.db
+touch db/main.db
 echo 'SESSION_SECRET={your session secret}' >> .env
-sqlite3 src/db/main.db < db/code.sql
+sqlite3 db/main.db < db/code.sql
