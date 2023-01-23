@@ -4,9 +4,9 @@
 To be made
 
 ## Prerequisites
-NodeJS version 18.8.0 preferably
 
-Sqlite3 installed on the system
+- NodeJS v18.8.0
+- Sqlite3 installed on the system or in the root of our directory
 
 To be improved
 
