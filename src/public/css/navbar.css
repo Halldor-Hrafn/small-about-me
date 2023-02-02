@@ -3,12 +3,12 @@
   margin: 0 auto;
 }
 
-header {
+#horizontal-navbar {
   background-color: aquamarine;
   height: 6vh;
 }
 
-header::after {
+#horizontal-navbar::after {
   content: '';
   display: table;
   clear: both;
@@ -19,21 +19,21 @@ header::after {
   padding: 5rem 0;
 } */
 
-nav {
+#horizontal-navbar nav {
   float: right;
 }
 
-#private-routes {
+#horizontal-navbar #private-routes {
   float: left;
 }
 
-nav ul {
+#horizontal-navbar nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-nav li {
+#horizontal-navbar nav li {
   display: inline-block;
   margin-left: 7rem;
   padding-top: 1rem;
@@ -41,17 +41,17 @@ nav li {
   position: relative;
 }
 
-nav a {
+#horizontal-navbar nav a {
   color: #444;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-nav a:hover {
+#horizontal-navbar nav a:hover {
   color: black;
 }
 
-nav a::before {
+#horizontal-navbar nav a::before {
   content: '';
   display: block;
   height: 5px;
@@ -64,6 +64,46 @@ nav a::before {
   transition: all ease-in-out 250ms;
 }
 
-nav a:hover::before {
+#horizontal-navbar nav a:hover::before {
   width: 100%;
+}
+
+#side-navbar {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  #side-navbar {
+    display: block;
+    position: absolute;
+    float: left;
+    top: 0;
+  
+    background-color: aquamarine;
+    width: 20vw;
+    height: 100%;
+  }
+  
+  #side-navbar::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  #side-navbar nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  #side-navbar nav li {
+    margin-left: 3vw;
+    padding-top: 3rem;
+  }
+  
+  #side-navbar nav a {
+    color: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 }
