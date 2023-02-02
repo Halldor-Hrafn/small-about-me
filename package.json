@@ -1,6 +1,6 @@
 {
   "name": "some-actual-sites",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A website made as a learning experience on how to create and deploy websites for production use",
   "main": "app.js",
   "scripts": {
