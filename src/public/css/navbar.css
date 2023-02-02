@@ -70,11 +70,17 @@
 
 #side-navbar {
   display: none;
+
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
+}
+
+#top-bar {
+  display: none;
 }
 
 @media (max-width: 700px) {
   #side-navbar {
-    display: block;
+    display: none;
     position: absolute;
     float: left;
     top: 0;
@@ -82,6 +88,8 @@
     background-color: aquamarine;
     width: 20vw;
     height: 100%;
+
+    transition: ease-in-out 250ms;
   }
   
   #side-navbar::after {
@@ -105,5 +113,13 @@
     color: #444;
     text-decoration: none;
     text-transform: uppercase;
+  }
+
+  #top-bar {
+    display: block;
+    top: 0;
+    background-color: aquamarine;
+    width: 100%;
+    height: 3vh;
   }
 }
